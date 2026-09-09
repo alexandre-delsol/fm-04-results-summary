@@ -1,110 +1,241 @@
-# Frontend Mentor - Results summary component
+# Frontend Mentor - Results Summary Component
 
-![Design preview for the Results summary component coding challenge](./preview.jpg)
+![Design preview](./design/desktop-design.jpg)
 
-## Welcome! 👋
+## Overview
 
-Thanks for checking out this front-end coding challenge.
+This is my solution to the **Results Summary Component** challenge from [Frontend Mentor](https://www.frontendmentor.io/).
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+The goal of this challenge was to reproduce a results summary component from a provided design, including both desktop and mobile layouts.
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+The project focuses on strengthening fundamental **HTML and CSS** skills, with particular attention to Flexbox, responsive design, typography, spacing, colors, component positioning, and interactive states.
 
-## The challenge
+## Screenshot
 
-Your challenge is to build out this results summary component and get it looking as close to the design as possible.
+![Results Summary Component](./design/desktop-design.jpg)
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+## Links
 
-We provide the data for the results in a local `data.json` file. So you can use that to add the results and total score dynamically if you choose.
+* [Frontend Mentor](https://www.frontendmentor.io/profile/alexandre-delsol)
+* [Live Site](https://alexandre-delsol.github.io/fm-04-results-summary/)
+* [Repository](https://github.com/alexandre-delsol/fm-04-results-summary)
 
-Your users should be able to:
+## Built With
 
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
-- **Bonus**: Use the local JSON data to dynamically populate the content
+* HTML5
+* CSS3
+* Flexbox
+* Responsive Design
+* CSS Positioning
+* Git / GitHub
 
-### Want some support on the challenge? 
+## Features
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+* Responsive results summary component
+* Semantic HTML structure
+* Flexbox-based layouts
+* Desktop and mobile layouts
+* Results list using semantic `<ul>` and `<li>` elements
+* Custom typography using Hanken Grotesk
+* Responsive spacing and sizing
+* Hover state on the Continue button
+* Overlapping cards using CSS positioning and `z-index`
+* Custom colors and gradients based on the provided style guide
 
-## Where to find everything
+## What I Learned
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+This challenge helped me reinforce several fundamental CSS concepts and improve my ability to translate a visual design into a responsive layout.
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### Flexbox
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+I practiced using Flexbox at several levels of the component.
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+The main component uses Flexbox to place the two cards side by side on larger screens:
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+```css
+.score-component {
+    display: flex;
+}
+```
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+The result card uses a vertical Flexbox layout to organize its content:
 
-## Using AI coding assistants
+```css
+.result-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+```
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+This helped me better understand the relationship between the **main axis** and **cross axis** when changing `flex-direction`.
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+### Alignment
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+I also practiced the difference between:
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+* `justify-content`
+* `align-items`
+* `align-self`
 
-## Building your project
+For example, the summary card uses:
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+```css
+align-items: flex-start;
+```
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+while the Continue button can override the alignment of the other children with:
 
-## Deploying your project
+```css
+align-self: center;
+```
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+This reinforced the idea that `align-items` controls the alignment of flex children globally, while `align-self` allows an individual child to use a different alignment.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+### CSS Positioning and z-index
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+One of the more interesting parts of this challenge was reproducing the visual overlap between the result card and the summary card.
 
-## Create a custom `README.md`
+The two cards are positioned next to each other, but the result card needs to visually appear above the summary card.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+I used relative positioning together with `z-index`:
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+```css
+.result-card {
+    position: relative;
+    z-index: 2;
+}
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+.summary-card {
+    position: relative;
+    z-index: 1;
+}
+```
 
-## Submitting your solution
+The important distinction is that `z-index` does not create the overlap itself. It controls the stacking order when elements occupy overlapping areas.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
+The actual visual displacement is handled separately.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+On desktop, the result card is moved horizontally:
 
-## Sharing your solution
+```css
+transform: translateX(15px);
+```
 
-There are multiple places you can share your solution:
+On mobile, the summary card is moved vertically:
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+```css
+transform: translateY(-30px);
+```
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+This allowed me to reproduce the different composition of the component between desktop and mobile layouts.
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+### Responsive Design
 
-## Got feedback for us?
+The desktop layout uses two cards placed horizontally:
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+```text
+┌──────────────────┬──────────────────┐
+│                  │                  │
+│      Result      │     Summary      │
+│                  │                  │
+└──────────────────┴──────────────────┘
+```
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+On smaller screens, the layout changes to a vertical composition:
 
-**Have fun building!** 🚀
+```text
+┌──────────────────┐
+│                  │
+│      Result      │
+│                  │
+└──────────────────┘
+┌──────────────────┐
+│     Summary      │
+│                  │
+└──────────────────┘
+```
+
+The layout direction is changed using a media query:
+
+```css
+@media (max-width: 600px) {
+    .score-component {
+        flex-direction: column;
+    }
+}
+```
+
+This helped reinforce the idea that responsive design is not simply about reducing dimensions. The **layout itself can change depending on the available space**.
+
+### Box Model
+
+I continued practicing the relationship between:
+
+* `width`
+* `height`
+* `padding`
+* `margin`
+* `box-sizing`
+* `gap`
+
+I used:
+
+```css
+box-sizing: border-box;
+```
+
+through the reset so that declared dimensions include the element's padding and border.
+
+I also used `gap` with Flexbox to control spacing between elements without relying unnecessarily on margins.
+
+### Semantic HTML
+
+The four result categories are represented as a list:
+
+```html
+<ul>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+</ul>
+```
+
+Using `<ul>` and `<li>` is appropriate because the categories form a collection of related results.
+
+I also used headings and paragraphs according to the role of the content rather than choosing elements purely for their visual appearance.
+
+### Decorative Images
+
+The category icons are decorative because their meaning is already provided by the adjacent text.
+
+They therefore use an empty `alt` attribute:
+
+```html
+<img src="./assets/images/icon-reaction.svg" alt="">
+```
+
+This prevents screen readers from unnecessarily reading redundant information.
+
+## Continued Development
+
+For future projects, I want to continue improving:
+
+* Responsive CSS
+* CSS layout techniques
+* Accessibility
+* Keyboard navigation and focus states
+* Semantic HTML
+* Typography
+* CSS architecture and maintainability
+* Git commit quality
+* Component-based development
+
+I also want to progressively introduce JavaScript and frontend frameworks into future Frontend Mentor challenges after consolidating my HTML and CSS fundamentals.
+
+## Author
+
+* Frontend Mentor - [@alexandre-delsol](https://www.frontendmentor.io/profile/alexandre-delsol)
+* GitHub - [@alexandre-delsol](https://github.com/alexandre-delsol)
