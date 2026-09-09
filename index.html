@@ -4,8 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
   <title>Frontend Mentor | Results summary component</title>
@@ -17,47 +15,57 @@
       <h1>Your Result</h1>
       <div class="final-result">
         <span class="result">76</span>
-        <span class="max-score">100</span>
+        <span class="max-score">of 100</span>
       </div>
-      <p>Great</p>
-      <p>you scored higher than 65% of the people who have taken these tests.</p>
+      <p class="textual-score">Great</p>
+      <p class="description-score">You scored higher than 65% of the people who have taken these tests.</p>
     </div>
 
     <div class="summary-card">
       <h2>Summary</h2>
       <ul>
-        <li>
-          <img src="./assets/images/icon-reaction.svg" alt="">
-          <span>Reaction</span>
+        <li class="reaction">
+          <div>
+            <img src="./assets/images/icon-reaction.svg" alt="">
+            <span>Reaction</span>
+          </div>
           <div>
             <span class="stats-score">80</span>
             <span class="max-score">/ 100</span>
           </div>
         </li>
-        <li>
-          <img src="./assets/images/icon-memory.svg" alt="">
-          <span>Memory</span>
+        <li class="memory">
+          <div>
+            <img src="./assets/images/icon-memory.svg" alt="">
+            <span>Memory</span>
+          </div>
           <div>
             <span class="stats-score">92</span>
             <span class="max-score">/ 100</span>
           </div>
         </li>
-        <li><img src="./assets/images/icon-verbal.svg" alt="">
-          <span>Verbal</span>
+        <li class="verbal">
+          <div>
+            <img src="./assets/images/icon-verbal.svg" alt="">
+            <span>Verbal</span>
+          </div>
           <div>
             <span class="stats-score">61</span>
             <span class="max-score">/ 100</span>
           </div>
         </li>
-        <li><img src="./assets/images/icon-visual.svg" alt="">
-          <span>Visual</span>
+        <li class="visual">
+          <div>
+            <img src="./assets/images/icon-visual.svg" alt="">
+            <span>Visual</span>
+          </div>
           <div>
             <span class="stats-score">73</span>
             <span class="max-score">/ 100</span>
           </div>
         </li>
       </ul>
-      <a href="#">Continue</a>
+      <a class="continue-button" href="#">Continue</a>
     </div>
   </div>
 </body>
