@@ -146,6 +146,8 @@ li {
 
     width: 100%;
     padding: 12px;
+
+    border-radius: 10px;
 }
 
 li>div:first-child {
