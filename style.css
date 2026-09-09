@@ -1,0 +1,240 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: "Hanken Grotesk", sans-serif;
+    background-color: hsl(221, 100%, 96%);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.score-component {
+    display: flex;
+    width: 800px;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+.result-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 400px;
+    height: 500px;
+    gap: 20px;
+
+    border-radius: 20px;
+    background: linear-gradient(180deg,
+            rgba(120, 87, 255, 1) 0%,
+            rgba(46, 43, 233, 1) 100%);
+}
+
+.final-result>.max-score {
+    opacity: 0.5;
+}
+
+h1,
+.description-score,
+.max-score {
+    color: hsl(241, 100%, 89%);
+}
+
+.final-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+    background: linear-gradient(0deg,
+            rgba(78, 33, 202, 0.1) 0%,
+            rgba(36, 33, 202, 1) 100%);
+}
+
+.final-result .result {
+    font-size: 60px;
+    font-weight: 800;
+}
+
+.result,
+.textual-score {
+    color: hsl(0, 0%, 100%);
+}
+
+.textual-score {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+p.description-score {
+    font-size: 18px;
+    width: 70%;
+    text-align: center;
+}
+
+
+.summary-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 400px;
+    height: 500px;
+
+    padding: 0 30px;
+
+    gap: 20px;
+
+    background-color: hsl(0, 0%, 100%);
+}
+
+h2 {
+    color: hsl(224, 30%, 27%);
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 0;
+
+    list-style: none;
+    gap: 15px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 12px;
+}
+
+li>div:first-child {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.reaction {
+    background-color: hsla(0, 100%, 67%, 0.1);
+}
+
+.reaction span {
+    color: red;
+}
+
+.memory {
+    background-color: hsla(39, 100%, 56%, 0.1);
+}
+
+.memory span {
+    color: orange;
+}
+
+.verbal {
+    background-color: hsla(166, 100%, 37%, 0.1);
+}
+
+.verbal span {
+    color: green;
+}
+
+.visual {
+    background-color: hsla(234, 85%, 45%, 0.1);
+}
+
+.visual span {
+    color: blue;
+}
+
+a.continue-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 50px;
+
+    align-self: center;
+
+    background-color: hsl(224, 30%, 27%);
+    color: hsl(221, 100%, 96%);
+
+    text-decoration: none;
+    border-radius: 60px;
+}
+
+a.continue-button:hover {
+    background-color: hsl(234, 85%, 45%);
+}
+
+@media (min-width: 600px) {
+    .result-card {
+        position: relative;
+        z-index: 2;
+        transform: translateX(15px);
+    }
+
+    .summary-card {
+        position: relative;
+        z-index: 1;
+        border-radius: 0 20px 20px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .score-component {
+        flex-direction: column;
+    }
+
+    .result-card {
+        position: relative;
+        z-index: 2;
+    }
+
+    .summary-card {
+        position: relative;
+        z-index: 1;
+        transform: translateY(-30px);
+        border-radius: 0 0 20px 20px;
+    }
+}
